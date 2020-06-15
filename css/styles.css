@@ -1,17 +1,27 @@
 .box {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: lightblue;
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 2px;
-    padding-bottom: 2px;
+    padding-bottom: 5px;
     text-align: center;
-    /*CHANGE THIS LATER*/
-    width: 300px;
+    border: 3px solid rgb(202, 240, 253);
+    border-radius: 5%;
+    margin: 20px;
+    display: grid;
+    grid-template-rows: min-content auto;
 }
 
 .warehouse {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-gap: 2rem;
+    align-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .content {
@@ -29,13 +39,54 @@
 }
 
 .front > button {
-    background: none;
+    background: rgba(255, 239, 8, 0);
+    position: relative;
     box-shadow: 0 0 0 300vh lightblue;
     margin: 10px;
     padding: 0px;
+    border: 2px solid yellow;
     clip-path: polygon(-11px -11px, calc(100% + 11px) -11px, calc(100% + 11px) calc(100% + 11px), -11px calc(100% + 11px));
+}
+
+@keyframes selection-pulse {
+    from {background: rgba(255, 239, 8, 0);}
+    to {background: rgba(255, 239, 8, 0.5);}
+}
+
+.front > button:hover {
+    animation: selection-pulse 1s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
+    cursor: pointer;
+}
+
+.front > button > * {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    right: 0px;
+}
+
+.cool {
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke: 1px lightblue;
+    font-size: 1.25rem;
+    text-shadow: 0px 3px 1px black;
+}
+
+.cool-title {
+    font-weight: 900;
+    color: rgb(225, 247, 255);
+    -webkit-text-stroke: 2px black;
+    font-size: 2rem;
+    text-shadow: 2px 3px 1px black;
+}
+
+.back {
+    width: 100%;
+    height: 100%;
 }
 
 .back > * {
     width: 100%;
+    height: 100%;
 }
