@@ -1,0 +1,41 @@
+.box {
+    background-color: lightblue;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    /*CHANGE THIS LATER*/
+    width: 300px;
+}
+
+.warehouse {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    position: relative;
+}
+
+.front {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.front > button {
+    background: none;
+    box-shadow: 0 0 0 300vh lightblue;
+    margin: 10px;
+    padding: 0px;
+    clip-path: polygon(-11px -11px, calc(100% + 11px) -11px, calc(100% + 11px) calc(100% + 11px), -11px calc(100% + 11px));
+}
+
+.back > * {
+    width: 100%;
+}
